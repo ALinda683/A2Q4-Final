@@ -84,9 +84,15 @@ def are_community_besties(community: list, name1: str, name2: str) -> bool:
         list associated with the key "friends".
         Returns True if on both "friends" and "foes" list simultaneously
     """
+    for person in community:
+        if person["name"] == name1 and name2 in person["friends"]:
+            for friend in community:
+                if friend["name"] == name2 and name1 in friend["friends"]:
+                    return True
     return False
 
-def get_all_community_besties(community: list, name1: str, name2: str) -> list:
+
+def get_all_community_besties(community: list, name: str) -> list:
     """
     Purpose: Determine all friends of name passed in where they are on each others "friends list".
     Pre-condition:
@@ -102,12 +108,7 @@ def get_all_community_besties(community: list, name1: str, name2: str) -> list:
         list associated with the key "friends"
         Still added to list if names are simultaneously in lists associated with "friends" and "foes"
     """
-    for person in community:
-        if person["name"] == name1 and name2 in person["friends"]:
-            for friend in community:
-                if friend["name"] == name2 and name1 in friend["friends"]:
-                    return True
-    return False
+    return []
 
 
 ### TESTS
