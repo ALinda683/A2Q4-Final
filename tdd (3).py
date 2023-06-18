@@ -17,9 +17,9 @@
 ###############################################################################
 
 # TODO: Fill in your information below
-# Student Name
-# NSID
-# Student Number
+# Student Name: Alinda Kumar Mazumder
+# NSID: ugj683
+# Student Number: 11342454
 
 # TODO: TEST DRIVEN DEVELOPMENT
 
