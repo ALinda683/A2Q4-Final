@@ -36,7 +36,7 @@ def get_patient_people(community: list):
     Return:
         list of dictionaries of those with no foes.
     """
-    return []
+    return [person for person in community if person["foes"] == []]
 
 def leave_community(community: list, name:str) -> None:
     """
