@@ -53,7 +53,18 @@ def leave_community(community: list, name:str) -> None:
     Return:
         None
     """
-    return
+    for person in community:
+        if person["name"] == name:
+            for friend in person["friends"]:
+                friend_person = next((p for p in community if p["name"] == friend), None)
+                if friend_person:
+                    friend_person["friends"].remove(name)
+            for foe in person["foes"]:
+                foe_person = next((p for p in community if p["name"] == foe), None)
+                if foe_person:
+                    foe_person["foes"].remove(name)
+            community.remove(person)
+            break
 
 def are_community_besties(community: list, name1: str, name2: str) -> bool:
     """
